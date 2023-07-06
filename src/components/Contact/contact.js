@@ -61,7 +61,13 @@ const ContactPage = () => {
   return (
     <Container>
       <h2>Contact Us For A Free Quote</h2>
-      <Form onSubmit={handleSubmit} netlify>
+      <Form
+        onSubmit={handleSubmit}
+        name="contact v1"
+        method="post"
+        data-netlify="true"
+        netlify
+      >
         <FormGroup>
           <Label htmlFor="name">Name:</Label>
           <Input
