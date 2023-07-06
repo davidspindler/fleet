@@ -52,23 +52,24 @@ const ContactPage = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Perform contact form submission logic here
-    console.log("Form submitted!");
-  };
+  //   const handleSubmit = (e) => {
+  //     e.preventDefault();
+  //     // Perform contact form submission logic here
+  //     console.log("Form submitted!");
+  //   };
 
   return (
     <Container>
       <h2>Contact Us For A Free Quote</h2>
       <Form
-        onSubmit={handleSubmit}
+        onSubmit="submit"
         name="contact v1"
         method="post"
         data-netlify="true"
         netlify
       >
         <FormGroup>
+          <input type="hidden" name="form-name" value="contact v1" />
           <Label htmlFor="name">Name:</Label>
           <Input
             type="text"
