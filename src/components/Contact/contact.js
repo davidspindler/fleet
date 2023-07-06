@@ -63,6 +63,7 @@ const ContactPage = () => {
       <h2>Contact Us For A Free Quote</h2>
       <Form
         onSubmit="submit"
+        data-netlify-honeypot="bot-field"
         name="contact v1"
         method="post"
         data-netlify="true"
@@ -70,6 +71,9 @@ const ContactPage = () => {
       >
         <FormGroup>
           <input type="hidden" name="form-name" value="contact v1" />
+          <div hidden>
+            <input name="bot-field" />
+          </div>
           <Label htmlFor="name">Name:</Label>
           <Input
             type="text"
