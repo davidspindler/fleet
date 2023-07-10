@@ -1,0 +1,44 @@
+{
+  "autoShopHeadings": [
+    {
+      "id": 1,
+      "title": "A/C Compressor Replacement",
+      "information": "Here is a detailed list of information regarding A/C compressor replacement and heating, along with other relevant details."
+    },
+    {
+      "id": 2,
+      "title": "A/C Condenser Replacement",
+      "information": "Here is a detailed list of information regarding A/C condenser replacement and heating, along with other relevant details."
+    },
+    {
+      "id": 3,
+      "title": "A/C Line / Hose",
+      "information": "Here is a detailed list of information regarding A/C line/hose and other relevant details."
+    },
+    {
+      "id": 4,
+      "title": "Oil Change",
+      "information": "Regular oil changes help to maintain engine performance and prolong the life of the vehicle."
+    },
+    {
+      "id": 5,
+      "title": "Brake Repair",
+      "information": "Brake repair involves inspecting, repairing, or replacing brake components to ensure optimal braking performance and safety."
+    },
+    {
+      "id": 6,
+      "title": "Tire Rotation",
+      "information": "Tire rotation involves moving the tires from one position to another to promote even tire wear and extend tire lifespan."
+    },
+    {
+      "id": 7,
+      "title": "Engine Tune-Up",
+      "information": "An engine tune-up involves inspecting and servicing various engine components to ensure optimal performance, fuel efficiency, and emission control."
+    },
+    {
+      "id": 8,
+      "title": "Wheel Alignment",
+      "information": "Wheel alignment adjusts the angles of the wheels to ensure proper tire contact with the road, improve handling, and prevent premature tire wear."
+    }
+  ]
+}

@@ -2,8 +2,9 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <section>
-      <div>
+    <section className="logo-hero-container">
+      <img src="logo-hero.png" className="logo-hero" alt="" />
+      {/* <div>
         <h2>Supercharge Your Fleet: Keep Rolling with Easy Maintenance!.</h2>
         <p>
           Maximize fleet efficiency and minimize downtime with our premium
@@ -12,7 +13,7 @@ const Hero = () => {
         </p>
         <button>Request a Quote</button>
         <button>Learn More</button>
-      </div>
+      </div> */}
     </section>
   );
 };

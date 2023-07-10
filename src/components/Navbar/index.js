@@ -9,7 +9,9 @@ const Navbar = () => {
         <h3>About Us</h3>
         <p>Services</p>
         <p>714-888-8888</p> */}
-        <Link to={"/"}>Logo</Link>
+        <Link to={"/"}>
+          <img src="logo-elite.png" className="logo-elite" />
+        </Link>
         <div className="links">
           <Link to={"/about"}>About</Link>
           <Link to={"/projects"}>Services</Link>
