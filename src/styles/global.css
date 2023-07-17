@@ -14,9 +14,48 @@ html {
 html,
 body {
   min-height: 100%;
-  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-    url(../../static/fleet.jpg) no-repeat center center;
+  /* background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url(../../static/fleet.jpg) no-repeat center center fixed; */
   background-color: black;
+  /* animation: hero 4s forwards; */
+}
+@keyframes hero {
+  0% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.hero-img-background {
+  /* border: 3px solid aqua; */
+  /* font-size: 4rem; */
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  height: 100vh;
+  /* height: 200px; */
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url(../../static/fleet.jpg) no-repeat center center fixed;
+  /* -webkit-background-size: cover; */
+  -moz-background-size: cover;
+  -o-background-size: cover;
+
+  -webkit-background-size: cover;
+  background-size: cover;
+  animation: hero 4s ease forwards;
+  position: relative;
+  /* display: flex; */
+  justify-content: center;
+  z-index: 0 !important;
+}
+.bring-forward {
+  position: absolute;
+  top: 0;
+  z-index: 999;
+}
+.hero-img-background > img {
+  animation: hero 4s ease forwards;
 }
 /* body {
   background: radial-gradient(
@@ -62,7 +101,7 @@ p {
 
 /* layout & nav */
 .layout {
-  max-width: 1500px;
+  /* max-width: 2000px; */
   margin: 0 auto;
 }
 
@@ -71,8 +110,8 @@ p {
   /* border: 1px solid pink; */
   /* padding-left: 20px; */
   justify-content: space-between;
-  margin: 40px auto;
-  padding: 0 50px 0 50px;
+  /* margin-top: 100px; */
+  padding: 40px 50px 0 50px;
 }
 
 nav a {
@@ -197,4 +236,40 @@ footer p {
 }
 .paddingBottom {
   padding-bottom: 20px;
+}
+#loading {
+  /* display: flex; */
+  /* position: relative;
+  top: 50%; */
+  /* align-items: center;
+  justify-content: center; */
+  /* width: 50px; */
+  height: 50px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
+  -webkit-animation: spin 1s ease-in-out infinite;
+  margin: auto;
+  width: 50px;
+  /* border: 1px solid pink; */
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* border: 3px solid green; */
+}
+
+@keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
 }

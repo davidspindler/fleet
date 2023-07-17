@@ -1,19 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Hero = () => {
+  const [loaded, setLoaded] = useState(false);
   return (
     <section className="logo-hero-container">
-      <img src="logo-hero.png" className="logo-hero" alt="" />
-      {/* <div>
-        <h2>Supercharge Your Fleet: Keep Rolling with Easy Maintenance!.</h2>
-        <p>
-          Maximize fleet efficiency and minimize downtime with our premium
-          on-site maintenance and repair solutions. Experience seamless fleet
-          servicing to eliminate disruptions and optimize cost-effectiveness.
-        </p>
-        <button>Request a Quote</button>
-        <button>Learn More</button>
-      </div> */}
+      {loaded ? null : (
+        <img
+          src="logo-hero.png"
+          className="logo-hero"
+          alt="hero image of fleet van for fleet mechanic shop"
+        />
+      )}
     </section>
   );
 };

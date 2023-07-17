@@ -9,4 +9,10 @@
  */
 module.exports = {
   plugins: [],
-}
+  siteMetadata: {
+    title: "Elite Fleet Mechanics",
+    description: "Fleet Mechanic Shop in Anaheim",
+    copyright: "This website is copyright 2023",
+    contact: "",
+  },
+};

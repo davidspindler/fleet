@@ -74,8 +74,9 @@ const Body = () => {
     setModal(!modal);
   };
   function handleScroll() {
+    const element = document.getElementById("myForm")?.offsetTop;
     window.scroll({
-      top: document.body.offsetHeight,
+      top: element,
       left: 0,
       behavior: "smooth",
     });
@@ -113,7 +114,7 @@ const Body = () => {
         <span className="depend-on">depend on</span>
       </h2>
       <p className="white-text paddingLeft paddingRight">
-        We specialize in contractor's fleets so if you're a Fedex, amazon, DHL
+        We specialize in contractor's fleets so if you're a Fedex, Amazon, DHL
         or Ontrac contractor we can dispatch our truck at night to take care of
         their maintenance needs when and where the trucks are parked!
       </p>
