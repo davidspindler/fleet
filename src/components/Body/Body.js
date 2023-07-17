@@ -2,6 +2,68 @@ import React, { useState } from "react";
 import Services from "../Services/service";
 import jsonData from "../../Constants/Services.json";
 import Modal from "../Popup/modal";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faWrench } from "@fortawesome/free-solid-svg-icons";
+import styled from "styled-components";
+
+const StyledButton = styled.button`
+  background-color: #ec2124;
+  border-radius: 10px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 24px;
+  font-weight: 500;
+  height: 40px;
+  line-height: 20px;
+  list-style: none;
+  margin: 20px 20px 20px 20px;
+  outline: none;
+  padding: 25px 145px 43px 134px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  @media screen and (max-width: 950px) {
+    font-size: 12px;
+  }
+`;
+const StyledButtonOutline = styled.button`
+  background-color: transparent;
+  // border-color: #ec2124;
+  border: 1px solid #ec2124;
+  border-radius: 10px;
+  // border-style: none;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 24px;
+  font-weight: 500;
+  height: 40px;
+  line-height: 20px;
+  list-style: none;
+  margin: 20px 20px 20px 20px;
+  // outline: none;
+  padding: 25px 125px 43px 134px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  @media screen and (max-width: 950px) {
+    font-size: 14px;
+  }
+`;
 const Body = () => {
   const [modal, setModal] = useState(false);
   const [selectedId, setSelectedId] = useState(null);
@@ -11,6 +73,25 @@ const Body = () => {
     console.log(selectedId);
     setModal(!modal);
   };
+  function handleScroll() {
+    window.scroll({
+      top: document.body.offsetHeight,
+      left: 0,
+      behavior: "smooth",
+    });
+  }
+  // console.log(elem);
+  // console.log("here is scroll Div");
+  function handleScrollToLearnMore() {
+    const elem = document.getElementById("myDiv")?.offsetTop;
+    // console.log(document.body.offsetHeight);
+    console.log(elem.offsetHeight);
+    window.scroll({
+      top: elem,
+      left: 0,
+      behavior: "smooth",
+    });
+  }
   const handleClick = (e) => {
     // console.log(e.target);
     setModal(true);
@@ -22,28 +103,35 @@ const Body = () => {
   const filteredHeadings = jsonData.autoShopHeadings.filter(
     (heading) => heading.id == selectedId
   );
-  console.log(filteredHeadings);
+  // console.log(filteredHeadings);
 
   return (
     <section>
-      <h2>
+      <FontAwesomeIcon icon="coffee" />
+      <h2 className="white-text">
         Timely and Trustworthy Mechanics you can{" "}
         <span className="depend-on">depend on</span>
       </h2>
-      <p>
+      <p className="white-text paddingLeft paddingRight">
         We specialize in contractor's fleets so if you're a Fedex, amazon, DHL
         or Ontrac contractor we can dispatch our truck at night to take care of
         their maintenance needs when and where the trucks are parked!
       </p>
-      <button>Contact us</button>
-      <button>Learn More</button>
+      <div className="buttons">
+        <StyledButton onClick={handleScroll}>Contact Us</StyledButton>
+        <StyledButtonOutline onClick={handleScrollToLearnMore}>
+          Learn More
+        </StyledButtonOutline>
+      </div>
       <Services></Services>
       <div>
         <div className="containerGrayOutside">
-          Here are some of the services we offer
-        </div>
-        <div className="containerGray">
-          {/* <div className="card">
+          <h2 className="services-text">
+            Here are some of the services we offer
+          </h2>
+
+          <div className="containerGray">
+            {/* <div className="card">
             A/C Compressor Replacement
             <button onClick={toggleModal}>More Details</button>
             <Modal
@@ -52,53 +140,81 @@ const Body = () => {
               autoShopHeadings={jsonData.autoShopHeadings}
             ></Modal>
           </div> */}
-          {jsonData.autoShopHeadings.map((heading) => {
-            return (
-              <>
-                <button
-                  className="card"
-                  key={heading.id}
-                  id={heading.id}
-                  onClick={handleClick}
-                >
-                  {heading.title}
-                </button>
+            {jsonData.autoShopHeadings.map((heading) => {
+              return (
+                <>
+                  <button
+                    className="card"
+                    key={heading.id}
+                    id={heading.id}
+                    onClick={handleClick}
+                  >
+                    <FontAwesomeIcon
+                      icon={faWrench}
+                      className="icon-fa"
+                      // flip="horizontal"
+                      // style={{ border: "1px solid pink" }}
+                    />
+                    {heading.title}
+                  </button>
 
-                {/* <Modal
+                  {/* <Modal
                   key={heading.id}
                   modal={modal}
                   toggleModal={toggleModal}
                   autoShopHeading={title}
                   autoShopInformation={information}
                 ></Modal> */}
-              </>
-            );
-          })}
+                </>
+              );
+            })}
 
-          {filteredHeadings.map((heading) => (
-            <Modal
-              key={heading.id}
-              modal={modal}
-              toggleModal={toggleModal}
-              title={heading.title}
-              information={heading.information}
-            />
-          ))}
-          {/* <Modal
+            {filteredHeadings.map((heading) => (
+              <Modal
+                key={heading.id}
+                modal={modal}
+                toggleModal={toggleModal}
+                title={heading.title}
+                information={heading.information}
+              />
+            ))}
+            {/* <Modal
             modal={modal}
             autoShopHeading={filteredHeadings.title}
             autoShopInformation={filteredHeadings.information}
             toggleModal={toggleModal}
           ></Modal> */}
-          <div className="card">I am a card3</div>
-          <div className="card">I am a card4</div>
-          <div className="card">I am a card5</div>
-          <div className="card">I am a card5</div>
-          <div className="card">I am a card7</div>
-          <div className="card">I am a card8</div>
+          </div>
         </div>
       </div>
-      <h2>Efficiency</h2>
+      {/* <div id="myDiv">hello</div> */}
+      <h2 className="white-text paddingTop" id="myDiv">
+        About Us
+      </h2>
+      <p className="white-text paddingLeft paddingRight">
+        We are a full service auto shop specializing in fleet maintenance and
+        repair for step vans. We are a family-owned business that takes care of
+        your vehicle as if it were our own. We proudly service the Orange County
+        / Los Angeles area and can dispatch our trucks to you so you can get
+        your fleet fixed quickly, without needing to go anywhere. Call us today
+        or contact us below for a free quote.
+      </p>
+
+      <h2 className="white-text paddingTop">Reliability is our #1 Priority</h2>
+      <p className="white-text paddingLeft paddingRight">
+        By bringing top quality, convenient service to fleets, we enable you to
+        avoid disruption, unnecessary expenses, and less downtime. We offer
+        services on a range of vehicles spanning from step vans to sedans and
+        trucks.
+      </p>
+      {/* <img src="bus-crop.png" alt="" /> */}
+      <p className="white-text paddingLeft paddingRight">
+        Regular fleet service ensure your fleet will remain in great condition.
+        The crucial element for longevity and reliability lies in routine
+        maintenance, not only saving money but enhancing the safety of your team
+        members as well.
+      </p>
+      {/* <h2>Efficiency</h2>
       <p>On-site service; no need to transport vehicle or wait.</p>
       <h2>Cost Savings</h2>
       <p>Competitive pricing and time saved.</p>
@@ -140,7 +256,7 @@ const Body = () => {
         By bringing top-quality, convenient service direct to fleets,
         RepairSmith enables fleet managers to avoid service disruption,
         unnecessary expenses, and the headaches of traditional fleet service.
-      </p>
+      </p> */}
     </section>
   );
 };

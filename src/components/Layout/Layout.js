@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../Navbar";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMugHot } from "@fortawesome/free-solid-svg-icons";
 const Layout = ({ children }) => {
   return (
     <div className="layout">
@@ -14,7 +15,9 @@ const Layout = ({ children }) => {
       </div> */}
       <div className="content">{children}</div>
       <footer>
-        <p>CopyRight 2023 Fleet </p>
+        <p className="white-text">CopyRight 2023 Fleet </p>
+        <FontAwesomeIcon icon={faMugHot} />
+        <FontAwesomeIcon icon={"coffee"} />
       </footer>
     </div>
   );

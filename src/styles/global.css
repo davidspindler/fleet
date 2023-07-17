@@ -5,7 +5,8 @@
   padding: 0;
   text-decoration: none;
   font-family: "Montserrat";
-  color: white;
+  text-align: center;
+  /* color: white; */
 }
 html {
   /* height: 100%; */
@@ -93,25 +94,36 @@ footer p {
   margin: 40px auto;
 } */
 .containerGray {
-  background-color: rgb(133, 12, 3) !important;
+  background-color: #bf1214 !important;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  border-radius: 10px;
   /* z-index: 999; */
 }
 .containerGrayOutside {
-  background-color: rgb(133, 12, 3) !important;
+  background-color: #bf1214 !important;
+  border-radius: 10px;
+  padding-top: 30px;
+  text-align: center;
+  color: white;
+}
+.services-text {
+  padding-bottom: 10px;
 }
 .card {
-  width: 200px;
+  width: 250px;
   height: 200px;
   margin: 20px 20px 20px 20px;
   padding: 24px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   border-radius: 12px;
   text-decoration: none;
   background-color: white;
+  border-color: white;
   cursor: pointer;
-  color: black;
+  border-style: solid;
+  /* color: black; */
 }
 
 .hide {
@@ -146,4 +158,43 @@ footer p {
 }
 .black-text {
   color: black;
+}
+.white-text {
+  color: white;
+}
+.icon-fa {
+  /* border: 1px solid green; */
+  color: black !important;
+  margin-right: 20px;
+  /* height: 20px; */
+}
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  /* border: 1px solid pink; */
+}
+
+@media screen and (max-width: 950px) {
+  .buttons {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 579px) {
+  .card {
+    /* border: 3px solid blue; */
+    width: 350px;
+    height: 100px;
+  }
+}
+.paddingLeft {
+  padding-left: 10px;
+}
+.paddingRight {
+  padding-right: 10px;
+}
+.paddingTop {
+  padding-top: 20px;
+}
+.paddingBottom {
+  padding-bottom: 20px;
 }

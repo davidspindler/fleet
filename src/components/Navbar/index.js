@@ -13,8 +13,10 @@ const Navbar = () => {
           <img src="logo-elite.png" className="logo-elite" />
         </Link>
         <div className="links">
-          <Link to={"/about"}>About</Link>
-          <Link to={"/projects"}>Services</Link>
+          <Link to={"/"} className="white-text">
+            714-888-8888
+          </Link>
+          {/* <Link to={"/projects"}>Services</Link> */}
         </div>
       </div>
     </nav>

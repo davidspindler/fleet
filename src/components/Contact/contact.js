@@ -16,7 +16,8 @@ const FormGroup = styled.div`
 `;
 
 const Label = styled.label`
-  margin-bottom: 5px;
+  margin-bottom: 10px;
+  // margin-top: 10px;
 `;
 
 const Input = styled.input`
@@ -26,6 +27,8 @@ const Input = styled.input`
   border-radius: 5px;
   border: 1px solid #ccc;
   color: black;
+  margin-top: 10px;
+  margin-bottom: 10px;
 `;
 
 const TextArea = styled.textarea`
@@ -35,6 +38,7 @@ const TextArea = styled.textarea`
   border-radius: 5px;
   border: 1px solid #ccc;
   color: black;
+  margin-top: 15px;
 `;
 
 const Button = styled.button`
@@ -42,7 +46,7 @@ const Button = styled.button`
   font-size: 16px;
   border-radius: 5px;
   border: none;
-  background-color: #4caf50;
+  background-color: red;
   color: white;
   cursor: pointer;
 `;
@@ -60,7 +64,9 @@ const ContactPage = () => {
 
   return (
     <Container>
-      <h2>Contact Us For A Free Quote</h2>
+      <h2 className="white-text" style={{ marginBottom: "20px" }}>
+        Contact Us For A Free Quote
+      </h2>
       <Form
         onSubmit="submit"
         data-netlify-honeypot="bot-field"
@@ -74,7 +80,13 @@ const ContactPage = () => {
           <div hidden>
             <input name="bot-field" />
           </div>
-          <Label htmlFor="name">Name:</Label>
+          <Label
+            htmlFor="name"
+            style={{ marginTop: "300px" }}
+            className="white-text"
+          >
+            Name:
+          </Label>
           <Input
             type="text"
             id="name"
@@ -85,7 +97,9 @@ const ContactPage = () => {
           />
         </FormGroup>
         <FormGroup>
-          <Label htmlFor="email">Email:</Label>
+          <Label htmlFor="email" className="white-text">
+            Email:
+          </Label>
           <Input
             type="email"
             id="email"
@@ -96,7 +110,9 @@ const ContactPage = () => {
           />
         </FormGroup>
         <FormGroup>
-          <Label htmlFor="message">Message:</Label>
+          <Label htmlFor="message" className="white-text">
+            Message:
+          </Label>
           <TextArea
             id="message"
             name="message"
