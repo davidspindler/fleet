@@ -79,9 +79,12 @@ body {
 }
 .logo-hero {
   /* border: 1px solid pink; */
+  opacity: 0;
   margin: 50px 0px 100px 00px;
   width: 33%;
+  animation: logo-fade 2s ease 1s forwards;
 }
+
 .logo-elite {
   width: 100px;
 }
@@ -272,5 +275,19 @@ footer p {
 @-webkit-keyframes spin {
   to {
     -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes logo-fade {
+  0% {
+    -webkit-transform: scale(0.9) rotate(4deg);
+    transform: scale(0.9) rotate(4deg);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1) rotate(0deg);
+    transform: scale(1) rotate(0deg);
+    -webkit-filter: none;
+    filter: none;
   }
 }
